@@ -1,0 +1,44 @@
+version: '3.8'
+
+services:
+  # 1. Your Node.js App Service
+  app:
+    build: .  # Tells it to build from the Dockerfile in this directory
+    ports:
+      - "3000:3000"  # Maps your computer's port 3000 to the container's port 3000
+    environment:
+      # Pass the database URL to your app.
+      # Notice the host is 'db', the name of our database service below.
+      DATABASE_URL: "postgresql://postgres:postgres@db:5432/kelpassignment"
+      CSV_FILE_PATH: "./src/data/data.csv"
+    depends_on:
+      db:
+        condition: service_healthy  # Waits for the db healthcheck to pass
+
+  # 2. Your Postgres Database Service
+  db:
+    image: postgres:15-alpine  # Use the official Postgres image
+    healthcheck:
+      # This test tells the 'app' when Postgres is truly ready
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    volumes:
+      # This is the magic line:
+      # It maps your init.sql file into the special Docker-Postgres init folder.
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+      
+      # (Optional) This keeps your database data even if you stop the container
+      - postgres-data:/var/lib/postgresql/data 
+    environment:
+      # These must match the DATABASE_URL in your app service
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: kelpassignment
+    ports:
+      - "5433:5432" # Maps your computer's 5433 to the container's 5432 (to avoid conflicts)
+
+# Defines the named volume for data persistence
+volumes:
+  postgres-data:
