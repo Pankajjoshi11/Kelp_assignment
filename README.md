@@ -1,13 +1,15 @@
 
 #  Kelp CSV Challenge
 
-This project is a high-performance Node.js application built to solve the Kelp CSV challenge. It features a robust, stream-based ETL (Extract, Transform, Load) pipeline that can efficiently process massive CSV files (50,000+ rows), parse complex nested JSON from `dot.notation` headers, and load the data into a PostgreSQL database, all triggered by a single API call.
+It features a robust, stream-based ETL (Extract, Transform, Load) pipeline that can efficiently process massive CSV files (50,000+ rows), parse complex nested JSON from `dot.notation` headers, and load the data into a PostgreSQL database, all triggered by a single API call.
 
 ### Built With
 * **Node.js (v18)**
 * **Express.js**
 * **PostgreSQL (v15)**
 * **Docker**
+
+![Project Demo GIF](assets/kelp_video.gif)
 
 ## 📁 Project Structure
 
