@@ -91,7 +91,7 @@ If this were a real-world application where the database schema was expected to 
 This solution is a strong foundation. Here are the next steps I would take to make it even more robust:
 
 * **[ ] Add Unit Tests (High Priority):**
-    * Test `src/utils/parserLogic.js` to validate the `deepSet` and `mapToDbRow` functions.
+    * Test `src/utils/parserLogic.js` to validate the functions.
     * Mock `databaseService.js` and test the `reportService.js` calculations.
     * Test the `uploadController.js` to ensure it returns `202</a>` and calls the service.
 
