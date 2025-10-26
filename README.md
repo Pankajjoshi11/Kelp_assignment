@@ -111,7 +111,7 @@ This is the fastest and most reliable way to run the entire application. It auto
 **Run it:**
 1.  Clone this repository:
     ```bash
-    git clone [https://github.com/your-username/kelp-csv-challenge.git](https://github.com/your-username/kelp-csv-challenge.git)
+    git clone https://github.com/Pankajjoshi11/kelp-csv-challenge.git
     cd kelp-csv-challenge
     ```
 2.  Build and run the containers:
@@ -133,7 +133,7 @@ If you prefer to run it on your local machine without Docker.
 **Setup:**
 1.  **Clone the repo:**
     ```bash
-    git clone [https://github.com/your-username/kelp-csv-challenge.git](https://github.com/your-username/kelp-csv-challenge.git)
+    git clone https://github.com/Pankajjoshi11/kelp-csv-challenge.git
     cd kelp-csv-challenge
     ```
 2.  **Install dependencies:**
