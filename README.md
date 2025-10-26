@@ -158,7 +158,7 @@ If you prefer to run it on your local machine without Docker.
     ```.env
     # Your local PostgreSQL connection string
     # Replace with your actual username, password, and port
-    DATABASE_URL="postgresql://postgres:postgres@localhost:5432/kelpassignment"
+    DATABASE_URL="postgresql://USERNAME:PASSWORD@localhost:5432/kelpassignment"
     
     # Path to the source CSV file
     CSV_FILE_PATH="./src/data/data.csv"
